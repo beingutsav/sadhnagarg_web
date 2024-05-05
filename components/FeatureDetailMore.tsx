@@ -30,8 +30,8 @@ import {
     return (
       <Box p={10}>
         <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
-          <Heading fontSize={'3xl'}>{heading.title}</Heading>
-          <Text color={'gray.600'} fontSize={'xl'}>
+          <Heading fontSize={'x-large'}>{heading.title}</Heading>
+          <Text color={'black'} fontSize={'xl'}>
             {heading.description}
           </Text>
         </Stack>
@@ -40,12 +40,12 @@ import {
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
             {features.map((feature) => (
               <HStack align={'top'}>
-                <Box color={'green.400'} px={2}>
+                <Box color={'black'} px={2}>
                   <Icon as={CheckIcon} />
                 </Box>
                 <VStack align={'start'}>
                   <Text fontWeight={600} fontSize={20}>{feature.title}</Text>
-                  <Text color={'gray.600'}>{feature.description}</Text>
+                  <Text color={'black'}>{feature.description}</Text>
                 </VStack>
               </HStack>
             ))}
