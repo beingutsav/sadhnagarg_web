@@ -1,0 +1,89 @@
+[
+  {
+    "id" : 1,
+    "title": "Kesavananda Bharati v. State of Kerala (1973): Defining India's Constitutional Boundaries",
+    "author": "Adv. Sadhna Garg",
+    "content": [
+      {
+        "description": "In the annals of Indian legal history, few cases loom as large as Kesavananda Bharati v. State of Kerala (1973). This landmark case marked a turning point in India's constitutional journey, reshaping the contours of legislative power and affirming the supremacy of the Constitution. In this research analysis, we delve into the intricacies of this seminal case, exploring its historical background, legal arguments, and enduring significance.",
+        "heading": "Introduction"
+      },
+      {
+        "description": "The genesis of the Kesavananda Bharati case can be traced back to the tumultuous political landscape of post-independence India...",
+        "heading": "Historical Background"
+      },
+      {
+        "description": "Central to the case was the challenge against the 24th Amendment to the Constitution, which sought to curtail the judicial review powers of the Supreme Court regarding constitutional amendments...",
+        "heading": "Legal Arguments"
+      },
+      {
+        "description": "In a historic verdict, the Supreme Court upheld the doctrine of basic structure, affirming the judiciary's role as the guardian of the Constitution...",
+        "heading": "Judgment and Significance"
+      },
+      {
+        "description": "The Kesavananda Bharati case stands as a testament to the resilience of India's democratic institutions and the judiciary's commitment to upholding constitutional principles...",
+        "heading": "Conclusion"
+      }
+    ],
+    "image_url": "/cases/bharati.jpeg",
+    "when_written": "23-March-2022"
+  },
+  {
+    "id": 2,
+    "title": "Maneka Gandhi v. Union of India (1978): Pioneering the Realm of Personal Freedom",
+    "author": "Adv. Sadhna Garg",
+    "content": [
+      {
+        "description": "Embedded within the annals of India's legal history lies a case that redefined the contours of personal liberty and constitutional interpretation – Maneka Gandhi v. Union of India (1978). With profound implications for individual rights and executive power, this landmark case stands as a testament to the judiciary's role in safeguarding the freedoms enshrined in the Indian Constitution. This research analysis delves into the gripping narrative of Maneka Gandhi's battle for liberty, unraveling the historical backdrop, legal intricacies, and enduring legacy of this seminal case.",
+        "heading": "Introduction"
+      },
+      {
+        "description": "The stage was set against the backdrop of a nation grappling with the aftermath of independence, seeking to define its identity and uphold the principles of democracy and justice. It was amidst this fervent atmosphere that the saga of Maneka Gandhi's passport impoundment unfolded, underscoring the delicate balance between individual rights and state authority in a nascent democracy.",
+        "heading": "Historical Background"
+      },
+      {
+        "description": "At the heart of the case lay a fundamental question: Can the State curtail personal liberty without due process of law? Maneka Gandhi's challenge to the arbitrary impoundment of her passport propelled this existential inquiry into the forefront of legal discourse, igniting a fierce debate on the limits of executive power and the sanctity of individual freedoms.",
+        "heading": "Legal Arguments"
+      },
+      {
+        "description": "In a momentous verdict that resonated far beyond the confines of the courtroom, the Supreme Court delivered a resounding affirmation of personal liberty. Emphasizing the holistic nature of Article 21, the Court declared that the right to life and personal liberty encompasses a panoply of rights, transcending mere existence to embrace the fullness of human dignity and autonomy.",
+        "heading": "Judgment and Significance"
+      },
+      {
+        "description": "As the echoes of the judgment reverberated across the nation, Maneka Gandhi v. Union of India emerged not merely as a legal milestone, but as a beacon of hope and resilience in the face of executive overreach. Its enduring legacy serves as a reminder of the judiciary's pivotal role in upholding the principles of justice, equality, and liberty – principles that form the bedrock of India's constitutional democracy.",
+        "heading": "Conclusion"
+      }
+    ],
+    "image_url": "/cases/meneka.jpg",
+    "when_written": "12-Feb-2024"
+  }, 
+  {
+    "id":3,
+    "title": "ADM Jabalpur v. Shivkant Shukla (1976): A Dark Chapter in India's Legal History",
+    "author": "Adv. Sadhna Garg",
+    "when_written": "02-Jan-24",
+    "image_url": "/cases/adm.jpg",
+    "content": [
+      {
+        "heading": "Introduction",
+        "description": "In the annals of India's legal history, there exists a chapter shrouded in controversy and regret – ADM Jabalpur v. Shivkant Shukla (1976). This landmark case, arising during the dark days of the Emergency, stands as a stark reminder of the perils of unchecked executive power and the erosion of civil liberties. In this research analysis, we delve into the harrowing narrative of ADM Jabalpur, unraveling its historical context, legal implications, and lasting repercussions on India's constitutional democracy."
+      },
+      {
+        "heading": "Historical Background",
+        "description": "Against the backdrop of political turmoil and civil unrest, the country found itself plunged into a state of Emergency in 1975, as civil liberties were suspended and dissent stifled. It was amidst this atmosphere of fear and uncertainty that the ADM Jabalpur case unfolded, presenting a critical test of the judiciary's independence and commitment to upholding constitutional values."
+      },
+      {
+        "heading": "Legal Arguments",
+        "description": "At the heart of the case lay a fundamental question: Can the State suspend the right to life and personal liberty during periods of Emergency? The petitioners, detained under the Maintenance of Internal Security Act (MISA), challenged the validity of their detention, invoking the protection of fundamental rights enshrined in the Constitution."
+      },
+      {
+        "heading": "Judgment and Significance",
+        "description": "In a moment of profound disappointment and betrayal, the Supreme Court delivered a judgment that shook the foundations of justice and morality. In a majority decision, the Court held that during the Emergency, the State had the power to suspend the right to life and personal liberty, rendering citizens defenseless against arbitrary detention and abuse of power."
+      },
+      {
+        "heading": "Conclusion",
+        "description": "As the dust settled on the ADM Jabalpur case, India was left to reckon with the devastating consequences of judicial capitulation in the face of authoritarianism. Its legacy serves as a somber reminder of the fragility of democracy and the imperative of eternal vigilance in safeguarding the rights and freedoms of all citizens."
+      }
+    ]
+  }  
+]
