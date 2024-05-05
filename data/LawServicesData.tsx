@@ -2,7 +2,7 @@
 import { onValue } from 'firebase/database';
 import { useEffect, useState } from 'react';
 import { lawServicesRef } from '../firebase/firebaseconfig';
-import { LawService } from '@/types/LawService';
+import type { LawService } from '@/types/LawService';
 
 const FirmLawServices = () => {
   const [lawServices, setLawServices] = useState<LawService[]>([]);

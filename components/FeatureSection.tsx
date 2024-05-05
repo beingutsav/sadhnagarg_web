@@ -12,7 +12,7 @@ import {
 import React from "react";
 import Link from "next/link";
 import NextLink from 'next/link'
-import { LawService } from "@/types/LawService";
+import type { LawService } from "@/types/LawService";
 
 const LawService = (props: LawService) => {
   return (
