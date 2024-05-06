@@ -9,87 +9,67 @@ import {
 } from "@chakra-ui/react";
 import Typewriter from "typewriter-effect";
 
-const Herosectionvideo: React.FC = () => {
+interface HeroSectionTypewriterProps {
+  typewritertexts: string[];
+}
+const HeroSectionTypewriter: React.FC<HeroSectionTypewriterProps> = ({
+  typewritertexts,
+}: HeroSectionTypewriterProps) => {
   return (
-    <Flex w={"full"} h={"100vh"} position={"relative"} overflow={"hidden"}>
+    <Flex w={"full"} h={"85vh"} position={"relative"} overflow={"hidden"}>
       <VStack
         w={"full"}
         justify={"center"}
         px={useBreakpointValue({ base: 4, md: 8 })}
         bgGradient={"linear(to-r, white, transparent)"}
         zIndex={1}
+        position="relative" // Added position relative to ensure absolute positioning works inside
       >
         <chakra.h2 fontSize="xxx-large" fontWeight="200">
           <Typewriter
             onInit={(typewriter) => {
-              typewriter
-                .typeString("Are Legal Troubles Haunting You?")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Seeking a Beacon in the Legal Maze?")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Yearning for Justice and Legal Clarity?")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Feeling Lost in Legal Limbo?")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Need a Warrior in Your Legal Battle?")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Struggling Against Legal Odds?")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Searching for a Legal Lifeline?")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Facing a Legal Storm?")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Yearning for Justice's Swift Sword?")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Dreaming of Legal Victory?")
-                .pauseFor(2500)
-                .start();
+                typewritertexts.forEach((typewritertext, index) => {
+                typewriter.typeString(typewritertext).pauseFor(2500).deleteAll();
+                if (index === typewritertexts.length - 1) {
+                  typewriter.start();
+                }
+              });
             }}
           />
         </chakra.h2>
 
-        <Stack maxW={"2xl"} align={"flex-start"} spacing={6}>
-          <Text
+        {/* Absolute positioning for buttons */}
+        <Stack
+          direction={"row"}
+          position="absolute"
+          justifyContent={"center"}
+          bottom={useBreakpointValue({ base: 4, md: 8 })} // Adjust bottom spacing for mobile and larger screens
+          spacing={useBreakpointValue({ base: 4, md: 8 })} // Adjust spacing between buttons
+        >
+          <Button
+            as={"a"}
+            href={"/consult"}
+            bg={"green.500"}
+            rounded={"full"}
             color={"white"}
-            fontWeight={700}
-            lineHeight={1.2}
-            fontSize={useBreakpointValue({ base: "3xl", md: "4xl" })}
-          ></Text>
-          <Stack direction={"row"}>
-            <Button
-              as={"a"}
-              href={"/consult"}
-              bg={"black"}
-              rounded={"full"}
-              color={"white"}
-              _hover={{ bg: "blue.500" }}
-            >
-              Find Legal Help
-            </Button>
-            <Button
-              bg={"black"}
-              rounded={"full"}
-              color={"white"}
-              as={"a"}
-              href={"/#feature-section"}
-              _hover={{ bg: "blackAlpha.500" }}
-            >
-              Show me more
-            </Button>
-          </Stack>
+            _hover={{ bg: "blue.500" }}
+          >
+            Find Legal Help
+          </Button>
+          <Button
+            bg={"black"}
+            rounded={"full"}
+            color={"white"}
+            as={"a"}
+            href={"/#feature-section"}
+            _hover={{ bg: "blackAlpha.500" }}
+          >
+            Show me more
+          </Button>
         </Stack>
       </VStack>
     </Flex>
   );
 };
 
-export default Herosectionvideo;
+export default HeroSectionTypewriter;

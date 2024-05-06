@@ -7,7 +7,20 @@ import Statistics from '@/components/Statistics';
 import Testimonial from '@/components/Testimonial';
 import type { TestimonialType } from "@/types/TestimonialModel";
 import type { LawServiceType } from "@/types/LawService";
+import HeroSectionTypewriter from "@/components/HeroSectionTypewriter";
 
+const messages = [
+  "Are Legal Troubles Haunting You?",
+  "Seeking a Beacon in the Legal Maze?",
+  "Yearning for Justice and Legal Clarity?",
+  "Feeling Lost in Legal Limbo?",
+  "Need a Warrior in Your Legal Battle?",
+  "Struggling Against Legal Odds?",
+  "Searching for a Legal Lifeline?",
+  "Facing a Legal Storm?",
+  "Yearning for Justice's Swift Sword?",
+  "Dreaming of Legal Victory?"
+];
 
 const fetchTestimonials = async () => {
   try {
@@ -62,7 +75,7 @@ export default function Home() {
   return (
     
     <div>
-      <Herosectionvideo />
+      <HeroSectionTypewriter typewritertexts={messages}/>
       <FeatureSection features = {lawServices}/>
       <Statistics/>
       <Testimonial testimonials={testimonials}/>

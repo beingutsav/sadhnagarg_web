@@ -87,7 +87,7 @@ export default function Navbar() {
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"pink.400"}
+            bg={"green.500"}
             href={"/consult"}
             _hover={{
               bg: "pink.300",
