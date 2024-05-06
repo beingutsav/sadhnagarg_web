@@ -1,6 +1,6 @@
 "use client";
 
-import Herosectionvideo from "@/components/Herosectionvideo";
+import Herosectionvideo from "@/components/HeroSectionTypewriter";
 import { useEffect, useState } from "react"; // Import useEffect and useState
 import FeatureSection from "@/components/FeatureSection";
 import Statistics from '@/components/Statistics';
