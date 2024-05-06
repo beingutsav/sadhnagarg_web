@@ -10,14 +10,14 @@ import {
   chakra,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { TestimonialModel } from "@/types/TestimonialModel";
+import { TestimonialType } from "@/types/TestimonialModel";
 
 const Testimonial = ({ children }: { children: ReactNode }) => {
   return <Box>{children}</Box>;
 };
 
 interface TestimonialSectionProps {
-  testimonials: TestimonialModel[];
+  testimonials: TestimonialType[];
 }
 
 const TestimonialContent = ({ children }: { children: ReactNode }) => {

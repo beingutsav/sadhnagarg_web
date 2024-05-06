@@ -1,4 +1,4 @@
-export type TestimonialModel  = {
+export type TestimonialType  = {
     id : number;
     name: string;
     jobTitle: string;

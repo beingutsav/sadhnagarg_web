@@ -35,7 +35,7 @@ onValue(featuresRef, (snapshot) => {
   const featuresData = snapshot.val();
   // Process the retrieved data here
   console.log('data from firebase for features');
-  console.log(featuresData);
+  //console.log(featuresData);
 });
 
 // Listen for changes in the data
@@ -43,7 +43,7 @@ onValue(lawServicesRef, (snapshot) => {
   const lawServicesData = snapshot.val();
   // Process the retrieved data here
   console.log('data from firebase for law services');
-  console.log(lawServicesData);
+  //console.log(lawServicesData);
 });
 
 // Listen for changes in the data
@@ -51,7 +51,7 @@ onValue(caseStudiesRef, (snapshot) => {
   const caseStudiesData = snapshot.val();
   // Process the retrieved data here
   console.log('data from firebase for case studies');
-  console.log(caseStudiesData);
+  //console.log(caseStudiesData);
 });
 
 

@@ -12,9 +12,9 @@ import {
 import React from "react";
 import Link from "next/link";
 import NextLink from 'next/link'
-import type { LawService } from "@/types/LawService";
+import type { LawServiceType } from "@/types/LawService";
 
-const LawService = (props: LawService) => {
+const LawServiceType = (props: LawServiceType) => {
   return (
     <GridItem>
       <chakra.h3 fontSize="2xl" fontWeight="500">
@@ -33,7 +33,7 @@ const LawService = (props: LawService) => {
 };
 
 interface FeatureSectionProps {
-  features: LawService[];
+  features: LawServiceType[];
 }
 
 const FeatureSection = ({ features }: FeatureSectionProps) => {
@@ -76,7 +76,7 @@ const FeatureSection = ({ features }: FeatureSectionProps) => {
         gap={{ base: "8", sm: "12", md: "16" }}
       >
         {features.map((feature, index) => (
-          <LawService
+          <LawServiceType
             index={index}
             title={feature.title}
             description={feature.description} id={0} details={{

@@ -1,4 +1,4 @@
-export type LawService = {
+export type LawServiceType = {
     index: number;
     id: number;
     title: string;
