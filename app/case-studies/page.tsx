@@ -10,6 +10,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import CaseStudies from "@/data/CaseStudiesData";
 import { GridItem } from "@chakra-ui/react";
+import Nextlink from "next/link";
 
 const theme = createTheme({
   palette: {},
@@ -24,22 +25,30 @@ export default function MediaCard() {
         </Box>
 
         <Box sx={{ flexGrow: 10, mt: 6 }}>
-          <Grid container sx={{ flexDirection: { xs: "column", md: "row"} }} spacing={2}>
+          <Grid
+            container
+            sx={{ flexDirection: { xs: "column", md: "row" } }}
+            spacing={2}
+          >
             {CaseStudies().map((study) => {
               return (
-                <Grid gridTemplateColumns={{
-                  base: "repeat(1, 1fr)", // Equal width columns for small screens
-                  sm: "repeat(1, 1fr)",   // Equal width columns for medium screens
-                  md: "1fr 4fr",           // First column 20%, Second column 80% for large screens
-                }}>
+                <Grid
+                  gridTemplateColumns={{
+                    base: "repeat(1, 1fr)", // Equal width columns for small screens
+                    sm: "repeat(1, 1fr)", // Equal width columns for medium screens
+                    md: "1fr 4fr", // First column 20%, Second column 80% for large screens
+                  }}
+                >
                   <GridItem colSpan={1}>
-                  <ResearchCard
-                    id={study.id}
-                    image={study.image_url}
-                    title={study.title}
-                    description={study.content[0].description}
-                    link={"/case-studies/"+study.id}
-                  />
+                    <Nextlink href={"/case-studies/" + study.id}>
+                      <ResearchCard
+                        id={study.id}
+                        image={study.image_url}
+                        title={study.title}
+                        description={study.content[0].description}
+                        link={"/case-studies/" + study.id}
+                      />
+                    </Nextlink>
                   </GridItem>
                 </Grid>
               );
