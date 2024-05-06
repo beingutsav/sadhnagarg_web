@@ -30,31 +30,6 @@ const testimonialsRef = ref(db, 'testimonials');
 const caseStudiesRef = ref(db, 'case-studies');
 
 
-// Listen for changes in the data
-onValue(featuresRef, (snapshot) => {
-  const featuresData = snapshot.val();
-  // Process the retrieved data here
-  console.log('data from firebase for features');
-  //console.log(featuresData);
-});
-
-// Listen for changes in the data
-onValue(lawServicesRef, (snapshot) => {
-  const lawServicesData = snapshot.val();
-  // Process the retrieved data here
-  console.log('data from firebase for law services');
-  //console.log(lawServicesData);
-});
-
-// Listen for changes in the data
-onValue(caseStudiesRef, (snapshot) => {
-  const caseStudiesData = snapshot.val();
-  // Process the retrieved data here
-  console.log('data from firebase for case studies');
-  //console.log(caseStudiesData);
-});
-
-
 
 // Export the Firebase database instance and the features reference
 export { db, featuresRef , lawServicesRef, testimonialsRef, caseStudiesRef};
