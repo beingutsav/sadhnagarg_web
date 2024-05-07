@@ -55,6 +55,7 @@ export default function MediaCard() {
           >
             {caseStudies.map((study) => {
               return (
+                <>
                 <Grid
                   gridTemplateColumns={{
                     base: "repeat(1, 1fr)", // Equal width columns for small screens
@@ -68,12 +69,14 @@ export default function MediaCard() {
                         id={study.id}
                         image={study.image_url}
                         title={study.title}
-                        description={study.content[0].description}
                         link={"/case-studies/" + study.id}
                       />
                     </Nextlink>
                   </GridItem>
+                  
                 </Grid>
+                
+                </>
               );
             })}
           </Grid>
