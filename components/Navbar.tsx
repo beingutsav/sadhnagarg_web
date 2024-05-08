@@ -23,6 +23,7 @@ import {
 } from "@chakra-ui/icons";
 import FirmLawServices from "@/data/LawServicesData";
 import { FaHome } from "react-icons/fa";
+import ModalComponent from "./Modal";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -81,20 +82,7 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"green.500"}
-            href={"/consult"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Take Legal Help
-          </Button>
+          <ModalComponent buttonText="Take Legal Help"></ModalComponent>
         </Stack>
       </Flex>
 

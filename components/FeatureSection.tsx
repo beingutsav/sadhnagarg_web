@@ -9,10 +9,12 @@ import {
   GridItem,
   Container,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import NextLink from 'next/link'
 import type { LawServiceType } from "@/types/LawService";
+import Model from '@/components/Modal';
+import ModalComponent from "@/components/Modal";
 
 const LawServiceType = (props: LawServiceType) => {
   return (
@@ -37,6 +39,7 @@ interface FeatureSectionProps {
 }
 
 const FeatureSection = ({ features }: FeatureSectionProps) => {
+
   return (
     <Box id="feature-section" as={Container} maxW="7xl" mt={14} p={4}>
       <Grid
@@ -53,11 +56,7 @@ const FeatureSection = ({ features }: FeatureSectionProps) => {
             <chakra.h2 fontSize="3xl" fontWeight="400">
               Law Services
             </chakra.h2>
-            <NextLink href="/consult">
-            <Button colorScheme="green" size="md">
-              Call To Action
-            </Button>
-            </NextLink>
+            <ModalComponent buttonText="Call to Action"></ModalComponent>
           </VStack>
         </GridItem>
         <GridItem>
