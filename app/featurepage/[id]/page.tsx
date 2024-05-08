@@ -11,7 +11,7 @@ const fetchFeatures = async ({params} : { params: { id: string } }) => {
   , { cache: 'force-cache' });
   const dataJson = await featureData.json();
   const lawServiceJson = dataJson['lawService'];
-  const lawServiceData = dataJson as LawServiceType;
+  const lawServiceData = lawServiceJson as LawServiceType;
   return lawServiceData;
 }
 
