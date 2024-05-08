@@ -1,33 +1,50 @@
 "use client";
 import FirmlawServices from "@/data/LawServicesData";
+import { useState, useEffect } from "react";
 import FeatureDetail from "@/components/FeatureDetail";
 import FeatureDetailMore from "@/components/FeatureDetailMore";
+import type { LawServiceType } from "@/types/LawService";
+
+
+const fetchFeatures = async ({params} : { params: { id: string } }) => {
+  const featureData = await fetch(`/api/featurepage/${params.id}`
+  , { cache: 'force-cache' });
+  const dataJson = await featureData.json();
+  const lawServiceJson = dataJson['lawService'];
+  const lawServiceData = dataJson as LawServiceType;
+  return lawServiceData;
+}
 
 export default function FeaturePage({ params }: { params: { id: string } }) {
-  const lawServices = FirmlawServices();
-  const index = parseInt(params.id);
 
-  // Check if lawServices is not empty and index is within bounds
-  const feature = lawServices[index];
-  if (!feature) {
-    return <div>Loading...</div>; // or handle loading state accordingly
+  const [lawService, setLawService] = useState<LawServiceType>();
+  useEffect(() => {
+    const fetchData = async () => {
+      const lawServiceData = await fetchFeatures({params});
+      setLawService(lawServiceData);
+    };
+    fetchData(); // Fetch data when component mounts
+  }, []); // Empty dependency array to run effect only once
+
+  if (!lawService) {
+    return <div>Loading...</div>
   }
 
   return (
     <div>
       <FeatureDetail
-        heading={feature.title}
-        description={feature.description}
+        heading={lawService.title}
+        description={lawService.description}
       />
       <FeatureDetailMore
-        features={feature.details.subDetails}
-        heading={feature.details.heading}
+        features={lawService.details.subDetails}
+        heading={lawService.details.heading}
       />
 
       <FeatureDetailMore
-        features={feature.whyChooseUs.subDetails}
-        heading={feature.whyChooseUs.heading}
+        features={lawService.whyChooseUs.subDetails}
+        heading={lawService.whyChooseUs.heading}
       />
     </div>
   );
-}
+  }
