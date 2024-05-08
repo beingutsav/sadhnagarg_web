@@ -82,7 +82,9 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
-          <ModalComponent buttonText="Take Legal Help"></ModalComponent>
+          <Box display={{ base: "none", md: "inline-flex" }}>
+            <ModalComponent buttonText="Take Legal Help"></ModalComponent>
+          </Box>
         </Stack>
       </Flex>
 
