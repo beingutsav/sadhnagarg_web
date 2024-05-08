@@ -4,23 +4,15 @@ import { useState, useEffect } from "react";
 import FeatureDetail from "@/components/FeatureDetail";
 import FeatureDetailMore from "@/components/FeatureDetailMore";
 import type { LawServiceType } from "@/types/LawService";
+import fetchLawService from "@/app/services/FetchLawService";
 
-
-const fetchFeatures = async ({params} : { params: { id: string } }) => {
-  const featureData = await fetch(`/api/featurepage/${params.id}`
-  , { cache: 'force-cache' });
-  const dataJson = await featureData.json();
-  const lawServiceJson = dataJson['lawService'];
-  const lawServiceData = lawServiceJson as LawServiceType;
-  return lawServiceData;
-}
 
 export default function FeaturePage({ params }: { params: { id: string } }) {
 
   const [lawService, setLawService] = useState<LawServiceType>();
   useEffect(() => {
     const fetchData = async () => {
-      const lawServiceData = await fetchFeatures({params});
+      const lawServiceData = await fetchLawService(params.id);
       setLawService(lawServiceData);
     };
     fetchData(); // Fetch data when component mounts

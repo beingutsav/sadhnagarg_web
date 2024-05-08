@@ -23,7 +23,7 @@ const LawServiceType = (props: LawServiceType) => {
       <chakra.p>{props.description}</chakra.p>
       <Link
         href={{
-          pathname: `/featurepage/${props.index}`
+          pathname: `/featurepage/${props.id}`
         }}
       >
         <chakra.p color="blue.500">More Details</chakra.p>
@@ -79,7 +79,9 @@ const FeatureSection = ({ features }: FeatureSectionProps) => {
           <LawServiceType
             index={index}
             title={feature.title}
-            description={feature.description} id={0} details={{
+            description={feature.description} 
+            id={feature.id} 
+            details={{
               heading: {
                 title: "",
                 description: ""
