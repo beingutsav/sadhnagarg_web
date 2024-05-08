@@ -6,25 +6,12 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { CaseStudyType } from "@/types/CaseStudy";
 import { useEffect, useState } from "react";
+import fetchCaseStudy from "@/services/FetchCaseStudy";
 
 const theme = createTheme({
   palette: {},
 });
 
-const fetchCaseStudy = async ({ params }: { params: { id: string } }) => {
-  try {
-    console.log('calling backend service for single case study');
-    const response = await fetch(`/api/casestudy/${params.id}`
-    , { cache: 'force-cache' });
-    const data = await response.json();
-    const caseStudyData = data['caseStudy'];
-    console.log(caseStudyData)
-    return caseStudyData as CaseStudyType;
-  } catch (error) {
-    console.error('Error fetching case study:', error);
-    return {}; // Return null in case of error
-  }
-};
 
 export default function ResearchPage({ params }: { params: { id: string } }) {
   const [caseStudy, setCaseStudy] = useState<CaseStudyType>();
@@ -32,7 +19,7 @@ export default function ResearchPage({ params }: { params: { id: string } }) {
   useEffect(() => {
     const fetchData = async () => {
       console.log('inside hook');
-      const caseStudyJson = await fetchCaseStudy({ params });
+      const caseStudyJson = await fetchCaseStudy(params.id);
       const caseStudyData = caseStudyJson as CaseStudyType;
       setCaseStudy(caseStudyData);
     };

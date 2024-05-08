@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import FeatureDetail from "@/components/FeatureDetail";
 import FeatureDetailMore from "@/components/FeatureDetailMore";
 import type { LawServiceType } from "@/types/LawService";
-import fetchLawService from "@/app/services/FetchLawService";
+import fetchLawService from "@/services/FetchLawService";
 
 
 export default function FeaturePage({ params }: { params: { id: string } }) {
