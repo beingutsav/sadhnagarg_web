@@ -14,7 +14,8 @@ const theme = createTheme({
 const fetchCaseStudy = async ({ params }: { params: { id: string } }) => {
   try {
     console.log('calling backend service for single case study');
-    const response = await fetch(`/api/casestudy/${params.id}`);
+    const response = await fetch(`/api/casestudy/${params.id}`
+    , { cache: 'force-cache' });
     const data = await response.json();
     const caseStudyData = data['caseStudy'];
     console.log(caseStudyData)
