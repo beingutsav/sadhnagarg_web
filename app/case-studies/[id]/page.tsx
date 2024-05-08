@@ -4,39 +4,61 @@ import { createTheme } from "@mui/material/styles";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import CaseStudies from "@/data/CaseStudiesData";
+import { CaseStudyType } from "@/types/CaseStudy";
+import { useEffect, useState } from "react";
 
 const theme = createTheme({
   palette: {},
 });
 
+const fetchCaseStudy = async ({ params }: { params: { id: string } }) => {
+  try {
+    console.log('calling backend service for single case study');
+    const response = await fetch(`/api/casestudy/${params.id}`);
+    const data = await response.json();
+    const caseStudyData = data['caseStudy'];
+    console.log(caseStudyData)
+    return caseStudyData as CaseStudyType;
+  } catch (error) {
+    console.error('Error fetching case study:', error);
+    return {}; // Return null in case of error
+  }
+};
 
 export default function ResearchPage({ params }: { params: { id: string } }) {
-  const caseData = CaseStudies();
-  const index = parseInt(params.id) - 1; //as id's are numberings
+  const [caseStudy, setCaseStudy] = useState<CaseStudyType>();
 
-  // Check if case studies is not empty and index is within bounds
-  const study = caseData[index];
-  if (!study) {
-    return <div>Loading...</div>; // or handle loading state accordingly
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log('inside hook');
+      const caseStudyJson = await fetchCaseStudy({ params });
+      const caseStudyData = caseStudyJson as CaseStudyType;
+      setCaseStudy(caseStudyData);
+    };
+    fetchData();
+  }, []);
+
+  if (!caseStudy) {
+    return <div>Loading...</div>;
   }
 
-
+  
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg">
         <Box sx={{ mt: 6 }}>
           <Typography variant="h3">
-            {study.title.substring(0, study.title.indexOf(":"))}
+            {caseStudy.title.substring(0, caseStudy.title.indexOf(":"))}
           </Typography>
           <Typography variant="h5">
-            {study.title.substring(study.title.indexOf(":")+1, study.title.length)}
+            {caseStudy.title.substring(caseStudy.title.indexOf(":")+1, caseStudy.title.length)}
           </Typography>
-          <Typography variant="body2">Authored By : {study.author}</Typography>
-          <Typography variant="body2">Published On : {study.when_written}</Typography>
+          <Typography variant="body2">Authored By : {caseStudy.author}</Typography>
+          <Typography variant="body2">Published On : {caseStudy.when_written}</Typography>
         </Box>
 
-        {study.content.map((subcontent) => {
+        
+        {caseStudy.content.map((subcontent) => {
           return (
             <Box sx={{ mt: 6 }}>
               <Typography variant="h4">{subcontent.heading}</Typography>

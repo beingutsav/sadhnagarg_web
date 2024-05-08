@@ -19,7 +19,7 @@ const theme = createTheme({
 
 const fetchCaseStudies = async () => {
   try {
-    console.log('calling backend service');
+    console.log('calling backend service for case studies');
     const data = await fetch('/api/casestudy', { cache: 'force-cache' });
     const dataJson = await data.json();
     return dataJson['caseStudies'] as CaseStudyType[];
